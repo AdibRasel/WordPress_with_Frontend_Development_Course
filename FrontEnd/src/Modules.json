@@ -1,0 +1,74 @@
+[
+  {
+    "title": "HTML5 & Semantic Markup",
+    "description": "Introduction to HTML5, semantic tags, and page structure.",
+    "dateRange": "Jun 15 - Jun 19",
+    "weekRange": "Week 1"
+  },
+  {
+    "title": "CSS3 & Responsive Design",
+    "description": "CSS basics, Flexbox, Grid, and responsive design principles.",
+    "dateRange": "Jun 22 - Jun 26",
+    "weekRange": "Week 2"
+  },
+  {
+    "title": "Bootstrap & UI Components",
+    "description": "Bootstrap grid system, components, and layout building.\n\n✅ Project: Responsive Personal Portfolio (HTML, CSS, Bootstrap)",
+    "dateRange": "Jun 29 - Jul 3",
+    "weekRange": "Week 3"
+  },
+  {
+    "title": "JavaScript Basics",
+    "description": "Variables, functions, events, DOM manipulation, and logic.",
+    "dateRange": "Jul 6 - Jul 10",
+    "weekRange": "Week 4"
+  },
+  {
+    "title": "Advanced JavaScript & APIs",
+    "description": "Fetch API, JSON, async/await, localStorage, and error handling.\n\n✅ Project: Interactive Quiz App (HTML, CSS, JS)",
+    "dateRange": "Jul 13 - Jul 17",
+    "weekRange": "Week 5"
+  },
+  {
+    "title": "React Fundamentals",
+    "description": "JSX, components, props, state, event handling in React.",
+    "dateRange": "Jul 20 - Jul 24",
+    "weekRange": "Week 6"
+  },
+  {
+    "title": "React Router & Hooks",
+    "description": "React Router, useState, useEffect, and reusable components.",
+    "dateRange": "Jul 27 - Jul 31",
+    "weekRange": "Week 7"
+  },
+  {
+    "title": "React Project & State Management",
+    "description": "Building a mini-project with React and managing state effectively.\n\n✅ Project: Simple Task Manager (React)",
+    "dateRange": "Aug 3 - Aug 7",
+    "weekRange": "Week 8"
+  },
+  {
+    "title": "Git, GitHub & Deployment",
+    "description": "Using Git/GitHub, deploying React projects to Vercel or Netlify.",
+    "dateRange": "Aug 10 - Aug 14",
+    "weekRange": "Week 9"
+  },
+  {
+    "title": "WordPress Fundamentals",
+    "description": "Introduction to WordPress, dashboard, settings, and themes.\n\n✅ Project: Business Website using Astra Theme (WordPress)",
+    "dateRange": "Aug 17 - Aug 21",
+    "weekRange": "Week 10"
+  },
+  {
+    "title": "Theme Customization & Plugins",
+    "description": "Customizing themes, installing essential plugins, and Elementor basics.\n\n✅ Project: Blog Site using Elementor (WordPress)",
+    "dateRange": "Aug 24 - Aug 28",
+    "weekRange": "Week 11"
+  },
+  {
+    "title": "Final Project & Freelancing Tips",
+    "description": "Building a complete website and guidelines on freelancing or job hunting.\n\n✅ Homework 1: Travel Landing Page (HTML, CSS, Bootstrap, JavaScript, React)\n✅ Homework 2: Personal Portfolio Website (WordPress with Elementor)",
+    "dateRange": "Aug 31 - Sep 4",
+    "weekRange": "Week 12"
+  }
+]
