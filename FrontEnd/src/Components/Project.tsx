@@ -9,30 +9,47 @@ interface Module {
 }
 
 const Project: React.FC = () => {
-  // Filter modules with projects or homework in description
+  // Filter only modules with Project or Homework
   const projectModules = (modules as Module[]).filter(
-    (mod) => mod.description.includes('✅ Project:') || mod.description.includes('✅ Homework')
+    (mod) =>
+      mod.description.includes('✅ Project') || mod.description.includes('✅ Homework')
   );
 
-  // Extract individual projects/homework from description lines
-  const extractProjects = (desc: string) => {
-    return desc
+  // Extract projects/homeworks from description
+  const extractProjects = (desc: string) =>
+    desc
       .split('\n')
-      .filter(line => line.trim().startsWith('✅ Project') || line.trim().startsWith('✅ Homework'))
-      .map(line => line.replace(/✅ (Project|Homework):?\s*/i, '').trim());
-  };
+      .filter(
+        (line) =>
+          line.trim().startsWith('✅ Project') || line.trim().startsWith('✅ Homework')
+      )
+      .map((line) =>
+        line
+          .replace(/^✅ (Project|Homework)(\s*\d*)?:?\s*/i, '') // Matches '✅ Project 1:' or '✅ Homework:'
+          .trim()
+      );
 
-  // Collect all projects from all filtered modules into one array
-  const allProjects = projectModules.flatMap(mod => extractProjects(mod.description));
+  // Flatten list of all projects
+  const allProjects = projectModules.flatMap((mod) => extractProjects(mod.description));
 
   return (
     <section id="project" className="section" style={{ maxWidth: 900, margin: 'auto' }}>
-      <h2 style={{ textAlign: 'center', color: '#0d47a1', fontWeight: '700', fontSize: '2.5rem', marginBottom: '2rem' }}>
+      <h2
+        style={{
+          textAlign: 'center',
+          color: '#0d47a1',
+          fontWeight: '700',
+          fontSize: '2.5rem',
+          marginBottom: '2rem',
+        }}
+      >
         Projects from Course Modules
       </h2>
 
       {projectModules.length === 0 && (
-        <p style={{ textAlign: 'center', fontSize: '1.2rem', color: '#666' }}>No projects found in the modules.</p>
+        <p style={{ textAlign: 'center', fontSize: '1.2rem', color: '#666' }}>
+          No projects found in the modules.
+        </p>
       )}
 
       <div style={{ display: 'grid', gap: '1.75rem' }}>
@@ -49,8 +66,10 @@ const Project: React.FC = () => {
                 borderLeft: '5px solid #0d47a1',
               }}
             >
-              <h3 style={{ color: '#0d47a1', fontWeight: 700, marginBottom: '0.75rem' }}>{mod.title}</h3>
-              <p style={{ fontWeight: '500', color: '#555', marginBottom: '1rem' }}>
+              <h3 style={{ color: '#0d47a1', fontWeight: 700, marginBottom: '0.75rem' }}>
+                {mod.title}
+              </h3>
+              <p style={{ fontWeight: 500, color: '#555', marginBottom: '1rem' }}>
                 <strong>Schedule:</strong> {mod.dateRange} &bull; {mod.weekRange}
               </p>
 
@@ -66,30 +85,91 @@ const Project: React.FC = () => {
         })}
       </div>
 
-      {/* Summary Section */}
+      {/* Beautiful Modern Summary */}
       <div
         style={{
-          marginTop: '3rem',
-          padding: '1.5rem 2rem',
-          backgroundColor: '#e3f2fd',
-          borderRadius: '12px',
-          boxShadow: '0 4px 12px rgba(13, 71, 161, 0.15)',
+          marginTop: '4rem',
+          padding: '2rem',
+          borderRadius: '20px',
+          background: '#f5f9ff',
+          boxShadow: 'inset 3px 3px 8px #d6e4f0, inset -3px -3px 8px #ffffff',
+          fontFamily: 'Segoe UI, sans-serif',
           color: '#0d47a1',
-          fontWeight: 600,
-          fontSize: '1.1rem',
-          lineHeight: 1.5,
         }}
       >
-        <p>
-          Total Projects: <strong>{allProjects.length}</strong>
-        </p>
-        <p>
-          Projects Summary:{' '}
-          {allProjects.length > 0
-            ? allProjects.join(', ')
-            : 'No projects available.'}
-        </p>
+        <h2
+          style={{
+            textAlign: 'center',
+            fontSize: '2rem',
+            fontWeight: 700,
+            marginBottom: '1.5rem',
+          }}
+        >
+          📝 Project & Homework Summary
+        </h2>
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '1rem',
+            marginBottom: '2rem',
+          }}
+        >
+          <div
+            style={{
+              padding: '1.25rem 2rem',
+              backgroundColor: '#ffffff',
+              borderRadius: '16px',
+              boxShadow: '0 6px 18px rgba(0, 0, 0, 0.07)',
+              fontSize: '1.5rem',
+              fontWeight: 700,
+              color: '#0d47a1',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minWidth: '180px',
+            }}
+          >
+            Total: <span style={{ marginLeft: '0.5rem', color: '#1565c0' }}>{allProjects.length} Project</span>
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '0.75rem',
+          }}
+        >
+          {allProjects.length > 0 ? (
+            allProjects.map((item, index) => (
+              <span
+                key={index}
+                style={{
+                  padding: '0.5rem 1rem',
+                  backgroundColor: '#e3f2fd',
+                  color: '#0d47a1',
+                  borderRadius: '30px',
+                  fontSize: '0.95rem',
+                  fontWeight: 500,
+                  boxShadow: '2px 2px 6px rgba(0,0,0,0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'default',
+                }}
+              >
+                {item}
+              </span>
+            ))
+          ) : (
+            <p style={{ textAlign: 'center', fontSize: '1.1rem' }}>No projects available.</p>
+          )}
+        </div>
       </div>
+
+
     </section>
   );
 };
