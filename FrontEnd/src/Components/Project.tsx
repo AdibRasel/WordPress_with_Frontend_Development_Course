@@ -33,7 +33,7 @@ const Project: React.FC = () => {
   const allProjects = projectModules.flatMap((mod) => extractProjects(mod.description));
 
   return (
-    <section id="project" className="section" style={{ maxWidth: 900, margin: 'auto' }}>
+    <section id="project" className="section" style={{ maxWidth: 900, margin: 'auto', marginTop:"20px",  }}>
       <h2
         style={{
           textAlign: 'center',

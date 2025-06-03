@@ -3,6 +3,7 @@ import HeroSection from '../Components/HeroSection';
 import CourseModule from '../Components/CourseModule';
 import Project from '../Components/Project';
 import ContactUs from '../Components/ContactUs';
+import EnrollNow from '../Components/EnrollNow';
 
 
 
@@ -18,10 +19,11 @@ const Home = () => {
 
       <Project />
 
+      <EnrollNow />
+
       <ContactUs />
 
 
-      <section id="about" className="section m-5 p-5">About Us Section</section>
 
 
 

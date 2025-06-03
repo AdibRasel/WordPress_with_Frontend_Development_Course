@@ -37,7 +37,7 @@ const CourseModule: React.FC = () => {
         minHeight: '100vh',
         padding: '4rem 1.5rem',
         background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
-        fontFamily: "'Poppins', sans-serif",
+        fontFamily: "'Poppins', sans-serif", marginTop:"20px" 
       }}
     >
       <div className="container" style={{ maxWidth: 900 }}>

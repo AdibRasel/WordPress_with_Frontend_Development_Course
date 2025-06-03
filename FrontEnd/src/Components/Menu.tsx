@@ -5,8 +5,8 @@ const menuItems = [
   { name: "Home", url: "#home" },
   { name: "Course Module", url: "#course-module" },
   { name: "Project", url: "#project" },
+  { name: "Enroll Now", url: "#EnrollNow" },
   { name: "Contact Us", url: "#contact" },
-  { name: "About Us", url: "#about" }
 ];
 
 const Menu = () => {
