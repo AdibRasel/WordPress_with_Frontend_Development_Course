@@ -49,7 +49,9 @@ const EnrollNow = () => {
         };
 
         try {
-            const response = await axios.post(Url, data);
+            // const response = await axios.post(Url, data);
+            await axios.post(Url, data);
+
 
             // Success message
             Swal.fire({
